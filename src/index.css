@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: 59 130 246;
+    /* Blue-500 */
+    --background: 243 244 246;
+    /* Gray-100 */
+  }
+
+  body {
+    @apply antialiased text-slate-800 bg-gray-100;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Component Classes */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border-white/20 shadow-xl rounded-2xl;
+}
+
+/* Status Badge untuk Online/Offline */
+.badge-online {
+  @apply px-3 py-1 text-xs font-bold text-green-700 bg-green-100 rounded-full border border-green-200 flex items-center gap-1.5;
+}
+
+.badge-offline {
+  @apply px-3 py-1 text-xs font-bold text-red-700 bg-red-100 rounded-full border border-red-200 flex items-center gap-1.5;
+}
+
+/* Tombol Menu Sidebar yang Cantik */
+.sidebar-link,
+.sidebar-link-active {
+  @apply flex items-center gap-3 px-4 py-3 transition-all duration-200 rounded-xl text-slate-400;
+}
+
+.sidebar-link {
+  @apply hover:bg-blue-600/20 hover:text-blue-400;
+}
+
+.sidebar-link-active {
+  @apply bg-blue-600/10 text-blue-400 shadow-inner;
+}
+
+/* Animasi Pulse untuk Heartbeat Agent */
+.dot-ping {
+  @apply relative flex h-3 w-3;
+}
+
+.dot-ping-online {
+  @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+}
+
+/* Custom Scrollbar agar terlihat Modern */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Horizontal scrollbar untuk Project Navigation */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-thumb-slate-300::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+
+.scrollbar-track-slate-100::-webkit-scrollbar-track {
+  @apply bg-slate-100 rounded-full;
+}
